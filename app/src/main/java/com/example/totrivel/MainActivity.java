@@ -30,25 +30,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        sp = (Spinner) findViewById(R.id.sp);
-        sp.setOnItemSelectedListener(spnOnItemSelected);
-        ArrayAdapter<CharSequence> adapter =
-                ArrayAdapter.createFromResource(this,
-                        R.array.place,
-                        android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        sp.setAdapter(adapter);
-//        setContentView(R.layout.activity_main);
-//        // 設定 sp 元件 ItemSelected 事件的 listener
-//        sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView parent, View view, int position, long id) {
-//                setContentView(R.layout.content_main);
-//                String result = parent.getItemAtPosition(position).toString();
-//                Toast.makeText(MainActivity.this, result, Toast.LENGTH_LONG).show();
-//                Toast.makeText(MainActivity.this, "您選擇了:" + lunch[position], Toast.LENGTH_SHORT).show();
-//            }
-
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -68,9 +49,36 @@ public class MainActivity extends AppCompatActivity {
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
                 .setOpenableLayout(drawer)
                 .build();
+
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
 //        NavigationUI.setupWithNavController(navigationView, navController);
+
+//---------------------------程式從這往下寫-----------------------------
+
+        sp = (Spinner) findViewById(R.id.sp);
+        sp.setOnItemSelectedListener(spnOnItemSelected);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.place,
+                        android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sp.setAdapter(adapter);
+
+        findViewById(R.id.homeBtn).setOnClickListener(new View.OnClickListener() {//主頁按鈕監聽功能
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "homeBtn Click!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        findViewById(R.id.attractionsBtn).setOnClickListener(new View.OnClickListener() {//景點選擇按鈕監聽功能
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "attractionsBtn Click!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
 
     }
 
@@ -88,17 +96,13 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-    private AdapterView.OnItemSelectedListener spnOnItemSelected
-            = new AdapterView.OnItemSelectedListener() {
-        public void onItemSelected(AdapterView<?> parent, View view,
-                                   int position, long id) {
-            setContentView(R.layout.content_main);
-
+    private AdapterView.OnItemSelectedListener spnOnItemSelected = new AdapterView.OnItemSelectedListener() {
+        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) { //地點被選取後的事件
             String result = parent.getItemAtPosition(position).toString();
             Toast.makeText(MainActivity.this, result, Toast.LENGTH_LONG).show();
 
         }
-        public void onNothingSelected(AdapterView<?> parent) {
+        public void onNothingSelected(AdapterView<?> parent) {//若未被選取後的事件
             //
         }
     };

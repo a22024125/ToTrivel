@@ -16,7 +16,8 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/Theme.ToTrivel.PopupOverlay" />
+            app:popupTheme="@style/Theme.ToTrivel.PopupOverlay"
+            app:title="主頁" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
