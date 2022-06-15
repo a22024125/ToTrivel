@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="keelung">
+        <item>潮境公園</item>
+        <item>廟口夜市</item>
+        <item>外木山情人湖濱海大道</item>
+        <item>忘憂谷</item>
+        <item>九份</item>
+        <item>和平島公園</item>
+    </string-array>
+</resources>

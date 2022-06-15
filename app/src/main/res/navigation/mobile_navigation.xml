@@ -38,5 +38,15 @@
         android:id="@+id/nav_slideshow"
         android:name="com.example.totrivel.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_slideshow" >
+        <action
+            android:id="@+id/action_nav_slideshow_to_nav_firstday2"
+            app:destination="@id/nav_firstday" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_firstday"
+        android:name="com.example.totrivel.ui.firstday.FirstDayFragment"
+        android:label="@string/menu_firstday"
+        tools:layout="@layout/fragment_first_day" />
 </navigation>

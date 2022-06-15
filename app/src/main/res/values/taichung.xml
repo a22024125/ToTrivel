@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="taichung">
+        <item>高美濕地</item>
+        <item>審計新村</item>
+        <item>麗寶樂園</item>
+        <item>異想新樂園</item>
+        <item>大坑步道</item>
+        <item>彩虹眷村</item>
+    </string-array>
+</resources>

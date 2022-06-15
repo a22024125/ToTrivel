@@ -27,21 +27,18 @@ import androidx.navigation.ui.NavigationUI;
 import com.example.totrivel.MainActivity;
 import com.example.totrivel.R;
 import com.example.totrivel.databinding.FragmentHomeBinding;
+import com.example.totrivel.ui.gallery.GalleryFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
+    private final static int KEELUNG = 1;
+    private final static int TAICHUNG = 2;
+    private int choicePlace = 1;
     private FragmentHomeBinding binding;
     private Spinner sp;
 
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-
-    }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -54,6 +51,7 @@ public class HomeFragment extends Fragment {
 
         Button checkBtn = root.findViewById(com.example.totrivel.R.id.checkBtn);
         checkBtn.setOnClickListener(checkBtnOnClick);
+
 
         //下拉選單設置
         sp = (Spinner) root.findViewById(com.example.totrivel.R.id.sp);
@@ -77,9 +75,17 @@ public class HomeFragment extends Fragment {
     public AdapterView.OnItemSelectedListener spnOnItemSelected = new AdapterView.OnItemSelectedListener() {
         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) { //地點被選取後的事件
             String result = parent.getItemAtPosition(position).toString();
+            if(result.equals("基隆")){
+                choicePlace = KEELUNG;
+//                Log.d("test2 choicePlace",String.valueOf(choicePlace));
+            }
+            if(result.equals("台中")){
+                choicePlace = TAICHUNG;
+//                Log.d("test2 choicePlace",String.valueOf(choicePlace));
+            }
             Toast.makeText((MainActivity)getActivity(), result, Toast.LENGTH_LONG).show();
-
         }
+
         public void onNothingSelected(AdapterView<?> parent) {//若未被選取後的事件
             //
         }
@@ -89,10 +95,17 @@ public class HomeFragment extends Fragment {
     private View.OnClickListener checkBtnOnClick = new View.OnClickListener() {//景點選擇按鈕監聽功能
         @Override
         public void onClick(View v) {
+
             Toast.makeText((MainActivity)getActivity(), "checkBtn Click!", Toast.LENGTH_SHORT).show();
 //                showGalleryFragment();
             NavController navController = ((MainActivity) getActivity()).getNavController();
             navController.navigate(com.example.totrivel.R.id.action_nav_home_to_nav_gallery);
         }
     };
+
+    public int getChoicePlace(){
+        Log.d("test3 getChoicePlace Home",String.valueOf(choicePlace));
+        return choicePlace;
+    }
+
 }

@@ -16,4 +16,13 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="lab">Fab</string>
     <string name="sp">sp</string>
+    <string name="placeCheckText">請選擇景點</string>
+    <string name="placeCheckBox1">景點1</string>
+    <string name="placeCheckBox2">景點2</string>
+    <string name="placeCheckBox3">景點3</string>
+    <string name="placeCheckBox4">景點4</string>
+    <string name="placeCheckBox5">景點5</string>
+    <string name="placeCheckBox6">景點6</string>
+    <string name="placeCheckBtn">確定</string>
+    <string name="menu_firstday">行程</string>
 </resources>

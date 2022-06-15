@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow ,R.id.nav_firstday)
                 .setOpenableLayout(drawer)
                 .build();
 
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
 //---------------------------程式從這往下寫-----------------------------
 
-        findViewById(R.id.homeBtn).setOnClickListener(new View.OnClickListener() {//主頁按鈕監聽功能
+        findViewById(R.id.homeBtn).setOnClickListener(new View.OnClickListener() {//選單主頁按鈕監聽功能
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "homeBtn Click!", Toast.LENGTH_SHORT).show();
@@ -70,15 +70,31 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-        findViewById(R.id.attractionsBtn).setOnClickListener(new View.OnClickListener() {//景點選擇按鈕監聽功能
+        findViewById(R.id.attractionsBtn).setOnClickListener(new View.OnClickListener() {//選單景點選擇按鈕監聽功能
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "attractionsBtn Click!", Toast.LENGTH_SHORT).show();
+                navController.navigate(R.id.nav_gallery);
             }
         });
 
-        findViewById(R.id.checkBtn).setOnClickListener(new View.OnClickListener() {//景點選擇按鈕監聽功能
+        findViewById(R.id.routeBtn).setOnClickListener(new View.OnClickListener() {//選單路線按鈕監聽功能
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "routeBtn Click!", Toast.LENGTH_SHORT).show();
+                navController.navigate(R.id.nav_slideshow);
+            }
+        });
+
+        findViewById(R.id.firstDayBtn).setOnClickListener(new View.OnClickListener() {//選單第一天按鈕監聽功能
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "firstDayBtn Click!", Toast.LENGTH_SHORT).show();
+                navController.navigate(R.id.nav_firstday);
+            }
+        });
+
+        findViewById(R.id.checkBtn).setOnClickListener(new View.OnClickListener() {//HOME景點選擇按鈕監聽功能
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "checkBtn Click!", Toast.LENGTH_SHORT).show();
