@@ -5,9 +5,12 @@ import android.view.View;
 import android.view.Menu;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.totrivel.ui.gallery.GalleryFragment;
+import com.example.totrivel.ui.home.HomeFragment;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
@@ -24,7 +27,10 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
+    private NavController navController;
     private Spinner sp;
+    private HomeFragment mhomeFragment;
+    private GalleryFragment mgalleryFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,23 +56,17 @@ public class MainActivity extends AppCompatActivity {
                 .setOpenableLayout(drawer)
                 .build();
 
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+        navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
 //        NavigationUI.setupWithNavController(navigationView, navController);
 
 //---------------------------程式從這往下寫-----------------------------
 
-        sp = (Spinner) findViewById(R.id.sp);
-        sp.setOnItemSelectedListener(spnOnItemSelected);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.place,
-                        android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        sp.setAdapter(adapter);
-
         findViewById(R.id.homeBtn).setOnClickListener(new View.OnClickListener() {//主頁按鈕監聽功能
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "homeBtn Click!", Toast.LENGTH_SHORT).show();
+                navController.navigate(R.id.nav_home);
             }
         });
 
@@ -78,6 +78,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.checkBtn).setOnClickListener(new View.OnClickListener() {//景點選擇按鈕監聽功能
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "checkBtn Click!", Toast.LENGTH_SHORT).show();
+//                showGalleryFragment();
+                navController.navigate(R.id.action_nav_home_to_nav_gallery);
+            }
+        });
 
 
     }
@@ -96,14 +104,8 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-    private AdapterView.OnItemSelectedListener spnOnItemSelected = new AdapterView.OnItemSelectedListener() {
-        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) { //地點被選取後的事件
-            String result = parent.getItemAtPosition(position).toString();
-            Toast.makeText(MainActivity.this, result, Toast.LENGTH_LONG).show();
+    public NavController getNavController(){
+        return navController;
+    }
 
-        }
-        public void onNothingSelected(AdapterView<?> parent) {//若未被選取後的事件
-            //
-        }
-    };
 }

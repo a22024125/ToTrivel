@@ -2,6 +2,6 @@
 <resources>
     <string-array name="place">
         <item>基隆</item>
-        <item>台北</item>
+        <item>台中</item>
     </string-array>
 </resources>
