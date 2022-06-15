@@ -25,4 +25,15 @@
     <string name="placeCheckBox6">景點6</string>
     <string name="placeCheckBtn">確定</string>
     <string name="menu_firstday">行程</string>
+    <string name="timeText">時間</string>
+    <string name="planPlace1">景點1</string>
+    <string name="planPlace2">景點2</string>
+    <string name="planPlace3">景點3</string>
+    <string name="planPlace4">景點4</string>
+    <string name="timeText1">09:00-12:00</string>
+    <string name="timeText2">14:00-16:00</string>
+    <string name="timeText3">18:00-19:30</string>
+    <string name="timeText4">午餐</string>
+    <string name="timeText5">晚餐</string>
+    <string name="planText">景點</string>
 </resources>
