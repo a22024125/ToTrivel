@@ -61,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/holo_green_light"
-                android:drawableTop="@android:drawable/btn_star_big_on"
+                android:drawableTop="@android:drawable/ic_menu_mylocation"
                 android:padding="5dp"
                 android:text="路線" />
         </LinearLayout>
