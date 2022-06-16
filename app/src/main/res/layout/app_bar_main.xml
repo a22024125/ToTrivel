@@ -15,7 +15,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:background="#01A4A2"
             app:popupTheme="@style/Theme.ToTrivel.PopupOverlay"
             app:title="主頁" />
 

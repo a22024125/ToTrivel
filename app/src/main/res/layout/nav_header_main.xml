@@ -8,7 +8,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:background="@android:color/system_accent1_100"
+        android:backgroundTint="@android:color/system_accent1_100"
         android:orientation="horizontal">
 
         <TextView
@@ -33,6 +33,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#595959"
             android:orientation="horizontal">
 
             <Button
@@ -40,7 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/holo_green_light"
+                android:backgroundTint="#595959"
                 android:drawableTop="@android:drawable/btn_star_big_on"
                 android:padding="5dp"
                 android:text="主頁" />
@@ -50,7 +51,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/holo_green_light"
+                android:backgroundTint="#595959"
                 android:drawableTop="@android:drawable/ic_dialog_map"
                 android:padding="5dp"
                 android:text="景點選擇" />
@@ -60,7 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/holo_green_light"
+                android:backgroundTint="#595959"
                 android:drawableTop="@android:drawable/ic_menu_mylocation"
                 android:padding="5dp"
                 android:text="路線" />
@@ -98,11 +99,11 @@
             </LinearLayout>
 
             <Button
-                android:text="返回"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:id="@+id/btn4"
-                android:background="?android:attr/colorFocusedHighlight"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:backgroundTint="#7BCDEF"
+                android:text="返回"
                 android:textSize="18sp" />
         </LinearLayout>
 

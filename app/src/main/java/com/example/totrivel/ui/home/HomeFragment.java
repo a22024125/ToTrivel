@@ -59,7 +59,9 @@ public class HomeFragment extends Fragment {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource((MainActivity)getActivity(), com.example.totrivel.R.array.place,
                         android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sp.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         sp.setAdapter(adapter);
+
 
         final TextView textView = binding.textHome;
         homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
