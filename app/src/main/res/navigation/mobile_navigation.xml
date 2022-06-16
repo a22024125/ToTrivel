@@ -40,8 +40,12 @@
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" >
         <action
-            android:id="@+id/action_nav_slideshow_to_nav_firstday2"
-            app:destination="@id/nav_firstday" />
+            android:id="@+id/action_nav_slideshow_to_nav_firstday"
+            app:destination="@id/nav_firstday"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
 
     <fragment
