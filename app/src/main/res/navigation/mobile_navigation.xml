@@ -32,6 +32,10 @@
             app:exitAnim="@android:anim/fade_out"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <argument
+            android:name="choicePlace"
+            app:argType="integer"
+            android:defaultValue="1" />
     </fragment>
 
     <fragment

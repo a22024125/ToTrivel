@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
@@ -23,12 +24,12 @@ import com.example.totrivel.ui.home.HomeFragment;
 import java.util.ArrayList;
 
 public class GalleryFragment extends Fragment {
-    private final static int KEELUNG = 1;
-    private final static int TAICHUNG = 2;
+    private final static int KEELUNG = 0;
+    private final static int TAICHUNG = 1;
     private FragmentGalleryBinding binding;
     private CheckBox mplaceCheckBox1, mplaceCheckBox2, mplaceCheckBox3, mplaceCheckBox4, mplaceCheckBox5, mplaceCheckBox6;
     private Button mplaceCheckBtn;
-    private HomeFragment mhomeFragment;
+    private int choicePlace;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -47,12 +48,11 @@ public class GalleryFragment extends Fragment {
         mplaceCheckBox5 = root.findViewById(R.id.placeCheckBox5);
         mplaceCheckBox6 = root.findViewById(R.id.placeCheckBox6);
         mplaceCheckBtn = root.findViewById(R.id.placeCheckBtn);
-        mhomeFragment = new HomeFragment();
 
-//        Log.d("choicePlace2",String.valueOf(mhomeFragment.getChoicePlace()));
-
-        // TODO:尚未完成，僅能顯示基隆景點
-        if(mhomeFragment.getChoicePlace() == KEELUNG){//根據上一頁選擇狀況來決定景點內容
+        choicePlace = getArguments().getInt("choice");
+        Log.d("FK",String.valueOf(choicePlace));
+        
+        if(choicePlace == KEELUNG){//根據上一頁選擇狀況來決定景點內容
             String s[] = getResources().getStringArray(R.array.keelung);
             for(int i = 0; i < 6; i++) {
                 switch (i){
@@ -77,7 +77,7 @@ public class GalleryFragment extends Fragment {
                 }
             }
         }
-        if(mhomeFragment.getChoicePlace() == TAICHUNG){
+        if(choicePlace == TAICHUNG){
             String s[] = getResources().getStringArray(R.array.taichung);
             for(int i = 0; i < 6; i++) {
                 switch (i){
@@ -108,11 +108,11 @@ public class GalleryFragment extends Fragment {
         return root;
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
-    }
+//    @Override
+//    public void onDestroyView() {
+//        super.onDestroyView();
+//        binding = null;
+//    }
 
     private View.OnClickListener placeCheckBtnOnClick = new View.OnClickListener() {
         @Override
