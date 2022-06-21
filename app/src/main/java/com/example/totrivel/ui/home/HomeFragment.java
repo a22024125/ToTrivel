@@ -91,7 +91,6 @@ public class HomeFragment extends Fragment {
 //                Log.d("test2 choicePlace",String.valueOf(choicePlace));
 
             }
-            Toast.makeText((MainActivity)getActivity(), result, Toast.LENGTH_LONG).show();
         }
 
         public void onNothingSelected(AdapterView<?> parent) {//若未被選取後的事件
@@ -103,7 +102,6 @@ public class HomeFragment extends Fragment {
     private View.OnClickListener checkBtnOnClick = new View.OnClickListener() {//景點選擇按鈕監聽功能
         @Override
         public void onClick(View v) {
-            Toast.makeText((MainActivity)getActivity(), "checkBtn Click!", Toast.LENGTH_SHORT).show();
 //                showGalleryFragment();
 
             NavController navController = ((MainActivity) getActivity()).getNavController();
