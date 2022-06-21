@@ -37,4 +37,8 @@
     <string name="timeText5">晚餐</string>
     <string name="planText">景點</string>
     <string name="routePlanTitleText">景點規劃順序</string>
+    <string name="mapPlace1">景點1</string>
+    <string name="mapPlace2">景點2</string>
+    <string name="mapPlace3">景點3</string>
+    <string name="mapPlace4">景點4</string>
 </resources>

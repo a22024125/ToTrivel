@@ -1,5 +1,7 @@
 package com.example.totrivel.ui.slideshow;
 
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;

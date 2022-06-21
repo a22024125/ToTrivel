@@ -64,7 +64,7 @@
                 android:backgroundTint="#595959"
                 android:drawableTop="@android:drawable/ic_menu_mylocation"
                 android:padding="5dp"
-                android:text="路線" />
+                android:text="行程安排" />
         </LinearLayout>
 
         <LinearLayout

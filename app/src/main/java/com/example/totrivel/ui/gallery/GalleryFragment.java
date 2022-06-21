@@ -57,7 +57,7 @@ public class GalleryFragment extends Fragment {
             if(choicePlace == KEELUNG) {//根據上一頁選擇狀況來決定景點內容
                 String s[] = getResources().getStringArray(R.array.keelung);
                 mCheckBox[i].setText(s[i]);
-                Log.d("FK si",s[i]);
+//                Log.d("FK si",s[i]);
             }
             if(choicePlace == TAICHUNG) {
                 String s[] = getResources().getStringArray(R.array.taichung);
