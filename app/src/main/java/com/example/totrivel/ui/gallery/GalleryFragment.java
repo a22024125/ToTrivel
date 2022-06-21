@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +31,9 @@ public class GalleryFragment extends Fragment {
     private CheckBox mplaceCheckBox1, mplaceCheckBox2, mplaceCheckBox3, mplaceCheckBox4, mplaceCheckBox5, mplaceCheckBox6;
     private Button mplaceCheckBtn;
     private int choicePlace;
+    private CheckBox[] mCheckBox;
+    private int lengthBox = 6;
+    private int lengthCount = 0;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -40,71 +44,28 @@ public class GalleryFragment extends Fragment {
 
         final TextView textView = binding.textGallery;
         galleryViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
-
-        mplaceCheckBox1 = root.findViewById(R.id.placeCheckBox1);
-        mplaceCheckBox2 = root.findViewById(R.id.placeCheckBox2);
-        mplaceCheckBox3 = root.findViewById(R.id.placeCheckBox3);
-        mplaceCheckBox4 = root.findViewById(R.id.placeCheckBox4);
-        mplaceCheckBox5 = root.findViewById(R.id.placeCheckBox5);
-        mplaceCheckBox6 = root.findViewById(R.id.placeCheckBox6);
         mplaceCheckBtn = root.findViewById(R.id.placeCheckBtn);
+        mCheckBox = new CheckBox[lengthBox];
 
+        //取得選擇地點的參數
         choicePlace = getArguments().getInt("choice");
-        Log.d("FK",String.valueOf(choicePlace));
-        
-        if(choicePlace == KEELUNG){//根據上一頁選擇狀況來決定景點內容
-            String s[] = getResources().getStringArray(R.array.keelung);
-            for(int i = 0; i < 6; i++) {
-                switch (i){
-                    case 0:
-                        mplaceCheckBox1.setText(s[i]);
-                        break;
-                    case 1:
-                        mplaceCheckBox2.setText(s[i]);
-                        break;
-                    case 2:
-                        mplaceCheckBox3.setText(s[i]);
-                        break;
-                    case 3:
-                        mplaceCheckBox4.setText(s[i]);
-                        break;
-                    case 4:
-                        mplaceCheckBox5.setText(s[i]);
-                        break;
-                    case 5:
-                        mplaceCheckBox6.setText(s[i]);
-                        break;
-                }
-            }
-        }
-        if(choicePlace == TAICHUNG){
-            String s[] = getResources().getStringArray(R.array.taichung);
-            for(int i = 0; i < 6; i++) {
-                switch (i){
-                    case 0:
-                        mplaceCheckBox1.setText(s[i]);
-                        break;
-                    case 1:
-                        mplaceCheckBox2.setText(s[i]);
-                        break;
-                    case 2:
-                        mplaceCheckBox3.setText(s[i]);
-                        break;
-                    case 3:
-                        mplaceCheckBox4.setText(s[i]);
-                        break;
-                    case 4:
-                        mplaceCheckBox5.setText(s[i]);
-                        break;
-                    case 5:
-                        mplaceCheckBox6.setText(s[i]);
-                        break;
-                }
-            }
-        }
+//        Log.d("FK",String.valueOf(choicePlace));
 
+        for(int i = 0; i < lengthBox; i++) {
+            int id = getResources().getIdentifier("placeCheckBox"+i, "id", getActivity().getPackageName());
+            mCheckBox[i] = (CheckBox) root.findViewById(id);
+            if(choicePlace == KEELUNG) {//根據上一頁選擇狀況來決定景點內容
+                String s[] = getResources().getStringArray(R.array.keelung);
+                mCheckBox[i].setText(s[i]);
+                Log.d("FK si",s[i]);
+            }
+            if(choicePlace == TAICHUNG) {
+                String s[] = getResources().getStringArray(R.array.taichung);
+                mCheckBox[i].setText(s[i]);
+            }
+            mCheckBox[i].setOnCheckedChangeListener(checker);
+        }
         mplaceCheckBtn.setOnClickListener(placeCheckBtnOnClick);
-
         return root;
     }
 
@@ -117,19 +78,21 @@ public class GalleryFragment extends Fragment {
     private View.OnClickListener placeCheckBtnOnClick = new View.OnClickListener() {
         @Override
         public void onClick(View view){
-              //TODO:僅測試用，CheckBox尚無功能
-              if(mplaceCheckBox1.isChecked()){
-                  Toast.makeText((MainActivity)getActivity(), "1", Toast.LENGTH_SHORT).show();
-              }
-              if(mplaceCheckBox2.isChecked()){
-                 Toast.makeText((MainActivity)getActivity(), "2", Toast.LENGTH_SHORT).show();
-              }
-              if(mplaceCheckBox3.isChecked()){
-                Toast.makeText((MainActivity)getActivity(), "3", Toast.LENGTH_SHORT).show();
-              }
-
             NavController navController = ((MainActivity) getActivity()).getNavController();
             navController.navigate(R.id.action_nav_gallery_to_nav_slideshow);
+        }
+    };
+
+    CompoundButton.OnCheckedChangeListener checker = new CompoundButton.OnCheckedChangeListener(){
+        @Override
+        public void onCheckedChanged(CompoundButton cb, boolean b) {
+            if(lengthCount == 4){//限制最多4個
+                cb.setChecked(false);
+            }else if(b){
+                lengthCount++;
+            }else if(!b){
+                lengthCount--;
+            }
         }
     };
 

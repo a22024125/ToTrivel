@@ -37,42 +37,42 @@
             android:orientation="vertical">
 
             <CheckBox
-                android:id="@+id/placeCheckBox1"
+                android:id="@+id/placeCheckBox0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#EEF7BF"
                 android:text="@string/placeCheckBox1" />
 
             <CheckBox
-                android:id="@+id/placeCheckBox2"
+                android:id="@+id/placeCheckBox1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#EEF7BF"
                 android:text="@string/placeCheckBox2" />
 
             <CheckBox
-                android:id="@+id/placeCheckBox3"
+                android:id="@+id/placeCheckBox2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#EEF7BF"
                 android:text="@string/placeCheckBox3" />
 
             <CheckBox
-                android:id="@+id/placeCheckBox4"
+                android:id="@+id/placeCheckBox3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#EEF7BF"
                 android:text="@string/placeCheckBox4" />
 
             <CheckBox
-                android:id="@+id/placeCheckBox5"
+                android:id="@+id/placeCheckBox4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#EEF7BF"
                 android:text="@string/placeCheckBox5" />
 
             <CheckBox
-                android:id="@+id/placeCheckBox6"
+                android:id="@+id/placeCheckBox5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#EEF7BF"
