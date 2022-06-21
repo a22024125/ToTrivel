@@ -109,7 +109,7 @@ public class HomeFragment extends Fragment {
             NavController navController = ((MainActivity) getActivity()).getNavController();
             Bundle bundle = new Bundle();
             bundle.putInt("choice", choicePlace);//傳遞choicePlace
-            navController.navigate(com.example.totrivel.R.id.action_nav_home_to_nav_gallery, bundle);
+            navController.navigate(com.example.totrivel.R.id.action_nav_home_to_nav_slideshow, bundle);
 
         }
     };

@@ -47,22 +47,12 @@
                 android:text="主頁" />
 
             <Button
-                android:id="@+id/attractionsBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="#595959"
-                android:drawableTop="@android:drawable/ic_dialog_map"
-                android:padding="5dp"
-                android:text="景點選擇" />
-
-            <Button
                 android:id="@+id/routeBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="#595959"
-                android:drawableTop="@android:drawable/ic_menu_mylocation"
+                android:drawableTop="@android:drawable/ic_dialog_map"
                 android:padding="5dp"
                 android:text="行程安排" />
         </LinearLayout>
@@ -85,16 +75,19 @@
                     android:background="@android:color/transparent"
                     android:drawableLeft="@android:drawable/ic_media_play"
                     android:text="第一天"
-                    android:textColor="#C3ED6895" />
+                    android:textColor="#C3ED6895"
+                    android:visibility="invisible" />
 
                 <Button
-                    android:id="@+id/secondDayBtn"
-                    android:layout_width="match_parent"
+                    android:id="@+id/attractionsBtn"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"
-                    android:drawableLeft="@android:drawable/ic_media_play"
-                    android:text="第二天"
-                    android:textColor="#C3ED6895" />
+                    android:layout_weight="1"
+                    android:backgroundTint="#595959"
+                    android:drawableTop="@android:drawable/ic_dialog_map"
+                    android:padding="5dp"
+                    android:text="景點選擇"
+                    android:visibility="invisible" />
 
             </LinearLayout>
 

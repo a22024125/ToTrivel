@@ -79,7 +79,8 @@ public class GalleryFragment extends Fragment {
         @Override
         public void onClick(View view){
             NavController navController = ((MainActivity) getActivity()).getNavController();
-            navController.navigate(R.id.action_nav_gallery_to_nav_slideshow);
+//            navController.navigate(R.id.action_nav_gallery_to_nav_slideshow);
+            //暫封
         }
     };
 

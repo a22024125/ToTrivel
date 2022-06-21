@@ -12,8 +12,8 @@
         app:defaultNavHost="true"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_nav_home_to_nav_gallery"
-            app:destination="@id/nav_gallery"
+            android:id="@+id/action_nav_home_to_nav_slideshow"
+            app:destination="@id/nav_slideshow"
             app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@android:anim/fade_out"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
@@ -25,13 +25,6 @@
         android:name="com.example.totrivel.ui.gallery.GalleryFragment"
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_gallery" >
-        <action
-            android:id="@+id/action_nav_gallery_to_nav_slideshow"
-            app:destination="@id/nav_slideshow"
-            app:enterAnim="@android:anim/fade_in"
-            app:exitAnim="@android:anim/fade_out"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
         <argument
             android:name="choicePlace"
             app:argType="integer"
@@ -50,11 +43,24 @@
             app:exitAnim="@android:anim/fade_out"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <argument
+            android:name="choicePlace"
+            app:argType="integer" />
     </fragment>
 
     <fragment
         android:id="@+id/nav_firstday"
         android:name="com.example.totrivel.ui.firstday.FirstDayFragment"
         android:label="@string/menu_firstday"
-        tools:layout="@layout/fragment_first_day" />
+        tools:layout="@layout/fragment_first_day" >
+        <argument
+            android:name="choicePlace"
+            app:argType="integer" />
+        <argument
+            android:name="choiceAttractions"
+            app:argType="string[]" />
+        <argument
+            android:name="order"
+            app:argType="integer[]" />
+    </fragment>
 </navigation>

@@ -22,19 +22,25 @@
         <entry key="..\:/Ching/ToTrivel/app/src/main/res/menu/main.xml" value="0.3353846153846154" />
         <entry key="..\:/Ching/ToTrivel/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1975" />
         <entry key="..\:/Ching/ToTrivel/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1975" />
+        <entry key="..\:/ToTrivel/app/src/main/res/drawable/ic_menu_camera.xml" value="0.1" />
+        <entry key="..\:/ToTrivel/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.1" />
+        <entry key="..\:/ToTrivel/app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.1" />
+        <entry key="..\:/ToTrivel/app/src/main/res/drawable/side_nav_bar.xml" value="0.1" />
         <entry key="..\:/ToTrivel/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/ToTrivel/app/src/main/res/layout/app_bar_main.xml" value="0.33" />
+        <entry key="..\:/ToTrivel/app/src/main/res/layout/app_bar_main.xml" value="0.25" />
         <entry key="..\:/ToTrivel/app/src/main/res/layout/content_main.xml" value="0.25" />
         <entry key="..\:/ToTrivel/app/src/main/res/layout/content_route.xml" value="0.1328125" />
         <entry key="..\:/ToTrivel/app/src/main/res/layout/content_spot.xml" value="0.1328125" />
         <entry key="..\:/ToTrivel/app/src/main/res/layout/fragment_first_day.xml" value="0.25" />
         <entry key="..\:/ToTrivel/app/src/main/res/layout/fragment_gallery.xml" value="0.25" />
-        <entry key="..\:/ToTrivel/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/ToTrivel/app/src/main/res/layout/fragment_home.xml" value="0.18" />
         <entry key="..\:/ToTrivel/app/src/main/res/layout/fragment_place_check.xml" value="0.25" />
         <entry key="..\:/ToTrivel/app/src/main/res/layout/fragment_slideshow.xml" value="0.2" />
         <entry key="..\:/ToTrivel/app/src/main/res/layout/nav_header_main.xml" value="0.22" />
         <entry key="..\:/ToTrivel/app/src/main/res/menu/activity_main_drawer.xml" value="0.33" />
         <entry key="..\:/ToTrivel/app/src/main/res/menu/main.xml" value="0.25" />
+        <entry key="..\:/ToTrivel/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="..\:/ToTrivel/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
       </map>
     </option>
   </component>

@@ -34,7 +34,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.totrivel.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
-
+    private final static int KEELUNG = 0;
+    private final static int TAICHUNG = 1;
+    private int choicePlace = 1;
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
     private NavController navController;
@@ -51,13 +53,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarMain.toolbar);
-        binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+//        binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
         DrawerLayout drawer = binding.drawerLayout;
 
         // Passing each menu ID as a set of Ids because each
@@ -80,11 +82,17 @@ public class MainActivity extends AppCompatActivity {
         }
 //        local = getLocal();
 //        Log.d("FKLOCAL",String.valueOf(local));
+        sp = (Spinner)findViewById(com.example.totrivel.R.id.sp);
+        sp.setOnItemSelectedListener(spnOnItemSelected);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, com.example.totrivel.R.array.place,
+                android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sp.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+        sp.setAdapter(adapter);
 
         findViewById(R.id.homeBtn).setOnClickListener(new View.OnClickListener() {//選單主頁按鈕監聽功能
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "homeBtn Click!", Toast.LENGTH_SHORT).show();
                 navController.navigate(R.id.nav_home);
             }
         });
@@ -92,7 +100,6 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.attractionsBtn).setOnClickListener(new View.OnClickListener() {//選單景點選擇按鈕監聽功能
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "attractionsBtn Click!", Toast.LENGTH_SHORT).show();
                 navController.navigate(R.id.nav_gallery);
             }
         });
@@ -100,7 +107,6 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.routeBtn).setOnClickListener(new View.OnClickListener() {//選單路線按鈕監聽功能
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "routeBtn Click!", Toast.LENGTH_SHORT).show();
                 navController.navigate(R.id.nav_slideshow);
             }
         });
@@ -108,7 +114,6 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.firstDayBtn).setOnClickListener(new View.OnClickListener() {//選單第一天按鈕監聽功能
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "firstDayBtn Click!", Toast.LENGTH_SHORT).show();
                 navController.navigate(R.id.nav_firstday);
             }
         });
@@ -116,14 +121,33 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.checkBtn).setOnClickListener(new View.OnClickListener() {//HOME景點選擇按鈕監聽功能
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "checkBtn Click!", Toast.LENGTH_SHORT).show();
 //                showGalleryFragment();
-                navController.navigate(R.id.action_nav_home_to_nav_gallery);
+                Bundle bundle = new Bundle();
+                bundle.putInt("choice", choicePlace);//傳遞choicePlace
+                navController.navigate(R.id.action_nav_home_to_nav_slideshow ,bundle);
             }
         });
-
-
     }
+
+    public AdapterView.OnItemSelectedListener spnOnItemSelected = new AdapterView.OnItemSelectedListener() {
+        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) { //地點被選取後的事件
+            String result = parent.getItemAtPosition(position).toString();
+            if(result.equals("基隆")){
+                choicePlace = KEELUNG;
+//                Log.d("test2 choicePlace",String.valueOf(choicePlace));
+            }
+            if(result.equals("台中")){
+                choicePlace = TAICHUNG;
+//                Log.d("test2 choicePlace",String.valueOf(choicePlace));
+
+            }
+        }
+
+        public void onNothingSelected(AdapterView<?> parent) {//若未被選取後的事件
+            //
+        }
+
+    };
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {

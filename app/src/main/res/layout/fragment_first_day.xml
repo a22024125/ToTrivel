@@ -45,7 +45,7 @@
         app:layout_constraintHorizontal_bias="0.598"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.337" />
+        app:layout_constraintVertical_bias="0.342" />
 
     <TextView
         android:id="@+id/planTimeText3"
@@ -58,7 +58,7 @@
         app:layout_constraintHorizontal_bias="0.598"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.738" />
+        app:layout_constraintVertical_bias="0.751" />
 
     <TextView
         android:id="@+id/timeText1"
@@ -84,7 +84,7 @@
         app:layout_constraintHorizontal_bias="0.095"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.528" />
+        app:layout_constraintVertical_bias="0.549" />
 
     <TextView
         android:id="@+id/timeText3"
@@ -97,14 +97,16 @@
         app:layout_constraintHorizontal_bias="0.095"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.857" />
+        app:layout_constraintVertical_bias="0.875" />
 
     <Button
-        android:id="@+id/mapPlace1"
+        android:id="@+id/mapPlace0"
         android:layout_width="168dp"
         android:layout_height="104dp"
-        android:backgroundTint="#FBC3C3"
+        android:backgroundTint="#F9D8DD"
         android:text="@string/mapPlace1"
+        android:textColor="#4F1717"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.65"
@@ -113,11 +115,13 @@
         app:layout_constraintVertical_bias="0.173" />
 
     <Button
-        android:id="@+id/mapPlace2"
+        android:id="@+id/mapPlace1"
         android:layout_width="168dp"
         android:layout_height="103dp"
-        android:backgroundTint="#FBC3C3"
+        android:backgroundTint="#F9D8DD"
         android:text="@string/mapPlace2"
+        android:textColor="#4F1717"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.65"
@@ -126,11 +130,13 @@
         app:layout_constraintVertical_bias="0.471" />
 
     <Button
-        android:id="@+id/mapPlace3"
+        android:id="@+id/mapPlace2"
         android:layout_width="170dp"
         android:layout_height="105dp"
-        android:backgroundTint="#FBC3C3"
+        android:backgroundTint="#F9D8DD"
         android:text="@string/mapPlace3"
+        android:textColor="#4F1717"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.655"
@@ -139,11 +145,13 @@
         app:layout_constraintVertical_bias="0.637" />
 
     <Button
-        android:id="@+id/mapPlace4"
+        android:id="@+id/mapPlace3"
         android:layout_width="170dp"
         android:layout_height="95dp"
-        android:backgroundTint="#FBC3C3"
+        android:backgroundTint="#F9D8DD"
         android:text="@string/mapPlace4"
+        android:textColor="#4F1717"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.655"

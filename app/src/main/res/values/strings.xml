@@ -9,7 +9,7 @@
 
     <string name="menu_home">主頁</string>
     <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_slideshow">行程安排</string>
     <string name="trivelPlace">請選擇旅遊地點</string>
     <string name="checkBtn">確認</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -30,15 +30,19 @@
     <string name="planPlace2">景點2</string>
     <string name="planPlace3">景點3</string>
     <string name="planPlace4">景點4</string>
-    <string name="timeText1">09:00-12:00</string>
-    <string name="timeText2">14:00-16:00</string>
-    <string name="timeText3">18:00-19:30</string>
+    <string name="timeText1">09:00-11:30</string>
+    <string name="timeText2">12:30-17:30</string>
+    <string name="timeText3">18:30-21:00</string>
     <string name="timeText4">午餐</string>
     <string name="timeText5">晚餐</string>
     <string name="planText">景點</string>
-    <string name="routePlanTitleText">景點規劃順序</string>
+    <string name="routePlanTitleText">請依序選擇想要遊玩的景點</string>
     <string name="mapPlace1">景點1</string>
     <string name="mapPlace2">景點2</string>
     <string name="mapPlace3">景點3</string>
     <string name="mapPlace4">景點4</string>
+    <string name="planSp1">sp</string>
+    <string name="planSp2">sp</string>
+    <string name="planSp3">sp</string>
+    <string name="planSp4">4</string>
 </resources>
